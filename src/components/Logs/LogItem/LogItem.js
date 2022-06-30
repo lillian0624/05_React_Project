@@ -1,12 +1,11 @@
 import React from "react";
+import Calender from "./Calender/Calender";
+import "./LogItem.css";
 
 const LogItem = () => {
   return (
-    <div>
-      <div className="date">
-        <div className="month">June</div>
-        <div className="day">24</div>
-      </div>
+    <div className="item">
+     <Calender/>
 
       <div className="content">
         <h2 className="desc">learn react</h2>
