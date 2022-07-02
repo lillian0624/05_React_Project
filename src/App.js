@@ -7,7 +7,7 @@ class App extends React.Component {
   }
 }
 */
-import Logs from "./components/Logs/Logs";
+import Logs from "./Logs/Logs";
 
 const App = () => {
   return (
@@ -16,6 +16,5 @@ const App = () => {
     </div>
   );
 };
-
 
 export default App;
