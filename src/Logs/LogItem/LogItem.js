@@ -4,10 +4,12 @@ import './LogItem.css'
 
 const LogItem = (props) => {
 
-    // 在函数组件中，属性就相当于是函数的参数，可以通过参数来访问
-    // 可以在函数组件的形参中定义一个props，props指向的是一个对象
-    // 它包含了父组件中传递的所有参数
-    // console.log(props.date);
+    /*
+    *   props是只读的不能修改
+    * */
+    // props.desc = '嘻嘻'; // 不能修改props中的属性
+    // console.log(props.desc);
+
 
     return (
         <div className="item">
