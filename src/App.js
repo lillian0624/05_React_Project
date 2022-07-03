@@ -1,34 +1,39 @@
 import "./App.css";
 import { useState } from "react";
+import { useRef } from 'react';
 
+let temp;
 const App = () => {
-  const [counter, setCounter] = useState(4);
-  const [user, setUser] = useState({ name: "Lillian", age: 999 });
+ 
+const h1Ref = useRef(1);
+// const h1Ref = {current:null};
+console.log(temp === h1Ref);
 
-  const addHandler = () => {
-    setTimeout(() => setCounter((prevCounter) => prevCounter + 1), 1000);
-  };
+const [count, setCount]= useState(1);
+temp = h1Ref;
 
-  const lessHandler = () => {
-    // alert('-1');
-    setCounter(counter - 1);
-  };
+ const clickHandler = ()=>{ 
 
-  const upDateUserHandler = () => {
-    // const newUser = Object.assign({} ,user);
-    // newUser.name = 'xiaoyanng';
-    // setUser(newUser);
-    setUser({ ...user, name: "xx" });
-  };
+   console.log(h1Ref); 
+  // alert(h1Ref.current=== header);
+  // h1Ref.current.innerText='xx';
+//   const header = document.getElementById('header');
+// alert(header)
+// header.innerHTML = 'sss';
+
+};
+
+const countAddHandler = ()=>{
+  setCount(prevState=>prevState+1);
+};
 
   return (
-    <div className={"app"}>
-      <h1>
-        {counter}--{user.name}--{user.age}
+    <div className={"app"} > 
+      <h1 id="header" ref={h1Ref}>
+       App{count}
       </h1>
-      {/* <button onClick={lessHandler}>-</button> */}
-      <button onClick={addHandler}>+</button>
-      <button onClick={upDateUserHandler}>3</button>
+      <button onClick={clickHandler}>+</button>
+      <button onClick={countAddHandler}>3</button>
     </div>
   );
 };
